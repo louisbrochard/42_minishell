@@ -6,21 +6,25 @@
 /*   By: louisbrochard <louisbrochard@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 19:05:24 by louisbrocha       #+#    #+#             */
-/*   Updated: 2023/06/28 19:05:40 by louisbrocha      ###   ########.fr       */
+/*   Updated: 2023/06/28 23:13:35 by louisbrocha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-void    free_list(t_lexer *lexer_list)
+void    free_list(t_lexer **lst)
 {
-    t_lexer *tmp;
+	t_lexer	*tmp;
 
-    while (lexer_list)
-    {
-        tmp = lexer_list;
-        lexer_list = lexer_list->next;
-        free(tmp->token);
-        free(tmp);
-    }
+	if (!*lst)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		if ((*lst)->content)
+			free((*lst)->content);
+		free(*lst);
+		*lst = tmp;
+	}
+	*lst = NULL;
 }

@@ -10,12 +10,13 @@ LIBFT_FILE	=	libft.a
 
 LIBFT_LIB	=	$(addprefix $(LIBFT_PATH), $(LIBFT_FILE))
 
-C_FILE		=	main.c 				\
-				minishell_loop.c 	\
-				handle_token.c		\
-				ft_error.c			\
-				check_quotes.c		\
-				free.c 				\
+C_FILE		=	main.c 					\
+				minishell_loop.c 		\
+				ft_error.c				\
+				check_quotes.c			\
+				free.c 					\
+				ft_token_reader.c		\
+				ft_token_reader_utils.c	\
 				\
 				\
 				\
