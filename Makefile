@@ -12,10 +12,10 @@ LIBFT_LIB	=	$(addprefix $(LIBFT_PATH), $(LIBFT_FILE))
 
 C_FILE		=	main.c 				\
 				minishell_loop.c 	\
-				\
-				\
-				\
-				\
+				handle_token.c		\
+				ft_error.c			\
+				check_quotes.c		\
+				free.c 				\
 				\
 				\
 				\
